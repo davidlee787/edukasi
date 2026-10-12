@@ -18,7 +18,7 @@ const filtered=data.games.filter(g=>(cat==='Semua'||g.category===cat)&&g.name.to
 const links=[['/','Beranda',House],['/games','Semua Game',Gamepad2],['/promotions','Promosi Demo',Gift],['/referral','Referral',Users],['/history','Riwayat',History],['/admin','Admin Demo',Shield]] as const;
 const artImages=[
 'https://images.unsplash.com/photo-1614728263952-84ea256f9679?auto=format&fit=crop&w=900&q=85',
-'https://images.unsplash.com/photo-157 candy?auto=format&fit=crop&w=900&q=85',
+'https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=900&q=85',
 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=85',
 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=85',
 'https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?auto=format&fit=crop&w=900&q=85',
