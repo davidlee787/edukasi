@@ -198,3 +198,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .crash-stage{background:radial-gradient(ellipse at 50% 100%,#17395b 0%,#0c172b 45%,#080d17 100%);border:1px solid rgba(102,216,244,.22);border-radius:16px;overflow:hidden}
 @media(max-width:760px){.games{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.game-info{padding:11px;align-items:stretch;flex-direction:column}.game-info strong{font-size:.94rem}.play-card{justify-content:center;width:100%;padding:9px 8px;font-size:.82rem}.game-art{aspect-ratio:1.25}.hero{border-radius:13px}.hero h1{font-size:clamp(2rem,10vw,3.1rem)}.section-head{margin-top:26px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+.rocket-ship{display:block;width:clamp(84px,18vw,148px);height:auto;object-fit:contain;filter:drop-shadow(0 12px 22px rgba(72,210,255,.25));position:absolute;left:18%;bottom:14%;z-index:2;animation:astronaut-float 2.6s ease-in-out infinite alternate}
+@keyframes astronaut-float{from{transform:translateY(5px) rotate(-4deg)}to{transform:translateY(-13px) rotate(3deg)}}
+.moon-obstacle{border:2px solid rgba(202,226,255,.4);box-shadow:inset -12px -8px 0 rgba(35,58,94,.65),0 0 38px rgba(131,174,255,.15)}
+.flight-multiplier{font-family:'Outfit',sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-.04em}
+@media(prefers-reduced-motion:reduce){.rocket-ship{animation:none}}
