@@ -101,3 +101,21 @@ nav a{font-size:12px;color:#aab0bd}nav a.on,nav a:hover{color:#fff}
 button,a{transition:background-color .18s,border-color .18s,color .18s}
 @media(max-width:900px){.games{grid-template-columns:repeat(3,minmax(0,1fr))}.hero:after{width:55%}}
 @media(max-width:620px){header{height:60px;padding:0 13px}.brand{font-size:13px}.brand small{font-size:7px}.shell main{padding:20px 12px 48px}.notice{font-size:9px;gap:7px}.notice b{width:100%;font-size:8px}.hero{min-height:360px;padding:26px 21px;border-radius:11px;align-items:flex-start}.hero:after{width:100%;top:43%;opacity:.42;background:linear-gradient(180deg,#111722 0%,#11172266 40%,#11172210 100%),url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=900&q=85') center/cover}.hero h1{font-size:42px;letter-spacing:-2px;max-width:340px;margin-top:16px}.hero p{font-size:12px;max-width:280px}.hero-foot{font-size:7px;right:12px;bottom:12px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));margin:14px 0 34px}.stats>div{padding:12px;border-bottom:1px solid #272e3b}.stats>div:nth-child(2){border-right:0}.stats>div:nth-child(3),.stats>div:nth-child(4){border-bottom:0}.stats b{font-size:15px}.section-head h2{font-size:22px}.games{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.game-card{border-radius:10px}.game-art{aspect-ratio:1.05}.game-info{padding:10px;gap:10px}.game-info strong{font-size:12px}.game-info small{font-size:10px}.play-card{min-height:35px;font-size:10px}.favorite{width:29px;height:29px;right:8px;top:8px}.game-art .tag{left:8px;top:8px}.quick{grid-template-columns:1fr;margin-top:28px}.page-title h1{font-size:34px}}
+
+/* Clearly fictional payment-method tiles and non-scannable QR artwork */
+.fake-qr{position:relative;display:flex;align-items:center;flex-direction:column;gap:10px;padding:17px 14px;margin:18px 0;background:#f5f4f1;border:1px solid #d9d8d3;border-radius:10px;color:#171923;overflow:hidden}
+.fake-qr-top{width:100%;display:flex;justify-content:space-between;align-items:center;color:#292b34;font-size:9px;letter-spacing:1.3px;font-weight:800}
+.fake-qr-top b{background:#e8e0ff;color:#4b368c;padding:5px 7px;border-radius:4px;font-size:8px;letter-spacing:.8px}
+.fake-qr-pattern{width:142px;height:142px;padding:7px;display:grid;grid-template-columns:repeat(11,1fr);grid-template-rows:repeat(11,1fr);gap:2px;position:relative;background:#fff;border:1px solid #d7d6d1;border-radius:5px;transform:rotate(-2deg)}
+.fake-qr-pattern i{background:transparent;border-radius:1px}.fake-qr-pattern i.on{background:#23242b}
+.fake-qr-pattern:before,.fake-qr-pattern:after{content:'';position:absolute;width:25px;height:25px;border:5px solid #23242b;background:#f5f4f1;box-shadow:inset 0 0 0 5px #f5f4f1;top:7px;left:7px}
+.fake-qr-pattern:after{left:auto;right:7px}
+.fake-qr-pattern span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(2deg);display:grid;place-items:center;width:44px;height:27px;background:#c7b8ff;border:2px solid #fff;border-radius:4px;color:#241a45;font-size:10px;font-weight:900;letter-spacing:1px}
+.fake-qr>strong{font-size:10px;text-align:center;letter-spacing:.4px}
+.fake-qr>small{max-width:300px;color:#62646c;text-align:center;font-size:10px;line-height:1.5}
+.payment-brand-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin:14px 0}
+.payment-brand{min-height:62px;padding:8px 4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:1px solid #2d3543;border-radius:8px;background:#10151e;color:#f1f0ee;min-width:0}
+.payment-brand>span{height:25px;min-width:25px;display:grid;place-items:center;padding:0 4px;border-radius:7px;font-size:12px;font-weight:900;letter-spacing:-.5px}
+.payment-brand>b{font-size:9px;font-weight:650;white-space:nowrap}
+.payment-brand.qris>span{background:#f2f0ea;color:#222}.payment-brand.dana>span{background:#168cff;color:white;font-style:italic;border-radius:50%}.payment-brand.gopay>span{background:#00a5e8;color:white;border-radius:50%}.payment-brand.ovo>span{background:#5b2e91;color:white}.payment-brand.seabank>span{background:#f15c69;color:white;border-radius:50%}
+@media(max-width:390px){.payment-brand-row{gap:4px}.payment-brand{min-height:57px;padding:6px 2px}.payment-brand>b{font-size:8px}.fake-qr-pattern{width:132px;height:132px}}
