@@ -16,7 +16,28 @@ const withdraw=()=>{const n=Number(amount);if(!Number.isInteger(n)||n<50000){set
 const play=(g:Game)=>{setActive(g);nav('/game/'+g.id)};const spin=()=>{const n=Math.random()>.55?2500:0;update({plays:data.plays+1,balance:data.balance+n,transactions:[record('Aktivitas Game',active?.name||'Game Demo',n,'HASIL ACAK DEMO'),...data.transactions]});setToast('Hasil acak hiburan. Kredit virtual tidak memiliki nilai uang.')};
 const filtered=data.games.filter(g=>(cat==='Semua'||g.category===cat)&&g.name.toLowerCase().includes(q.toLowerCase()));const path=loc.pathname;
 const links=[['/','Beranda',House],['/games','Semua Game',Gamepad2],['/promotions','Promosi Demo',Gift],['/referral','Referral',Users],['/history','Riwayat',History],['/admin','Admin Demo',Shield]] as const;
-const cards=(g:Game)=><article className="game-card" key={g.id}><div className={'game-art '+g.color}><span className="tag">DEMO</span><b>{g.emoji}</b><small>{g.name}</small></div><div className="game-info"><div><strong>{g.name}</strong><small>{g.category}</small></div><button className="round" aria-label={'Mainkan '+g.name} onClick={()=>play(g)}><Play size={16}/></button></div></article>;
+const artImages=[
+'https://images.unsplash.com/photo-1614728263952-84ea256f9679?auto=format&fit=crop&w=900&q=85',
+'https://images.unsplash.com/photo-157 candy?auto=format&fit=crop&w=900&q=85',
+'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=85',
+'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=85',
+'https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?auto=format&fit=crop&w=900&q=85',
+'https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=900&q=85',
+'https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=crop&w=900&q=85',
+'https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=85',
+'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=900&q=85',
+'https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=900&q=85',
+'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=900&q=85',
+'https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?auto=format&fit=crop&w=900&q=85',
+'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=85',
+'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=85',
+'https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85',
+'https://images.unsplash.com/photo-1475738198235-4b30fc6f2b3d?auto=format&fit=crop&w=900&q=85',
+'https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=85',
+'https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=900&q=85',
+'https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85',
+'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=85'
+];const cards=(g:Game)=><article className="game-card" key={g.id}><div className={'game-art '+g.color}><img src={artImages[(g.id-1)%artImages.length]} alt="" loading="lazy" onError={e=>{e.currentTarget.style.display='none'}}/><span className="tag">DEMO</span><button className="favorite" aria-label={'Simpan '+g.name} onClick={()=>setToast(g.name+' ditambahkan ke favorit demo')}><span>♡</span></button><b>{g.emoji}</b></div><div className="game-info"><div><strong>{g.name}</strong><small>{g.category}</small></div><button className="play-card" aria-label={'Mainkan '+g.name} onClick={()=>play(g)}><Play size={15}/> Mainkan Demo</button></div></article>;
 return <div className="shell"><header><Link className="brand" to="/"><span className="logo">X</span><span>EX-WITHDRAW<small>VIRTUAL ARCADE</small></span></Link><nav>{links.slice(0,5).map(([to,label,I])=><Link className={path===to?'on':''} to={to} key={to}><I size={15}/>{label}</Link>)}</nav><div className="head-right"><span className="balance"><Coins size={16}/>{money(data.balance)}</span><Link className="admin-link" to="/admin"><Shield size={15}/> Admin Demo</Link><button className="round mobile-menu" onClick={()=>setMenu(!menu)} aria-label="Menu"><MenuIcon/></button></div></header>{menu&&<div className="menu-pop">{links.map(([to,label,I])=><Link to={to} key={to} onClick={()=>setMenu(false)}><I size={16}/>{label}</Link>)}</div>}
 <div className="notice"><AlertTriangle size={15}/>{data.notice}<b>SIMULASI EDUKASI — TANPA UANG ASLI</b></div><main>
 {path==='/'&&<><section className="hero"><div><span className="eyebrow">✦ THE VIRTUAL PLAYGROUND</span><h1>{data.banner}</h1><p>Jelajahi koleksi game interaktif dengan kredit virtual.</p><Link className="primary" to="/games"><Play size={16}/> Mainkan Demo <ArrowUpRight size={16}/></Link><p className="safe"><CheckCircle2 size={14}/> 100% simulasi lokal</p></div><div className="planet"><span>✦</span><b>X</b><i>EX CREDIT</i></div><small className="hero-foot">PLAY SMART · PLAY DEMO</small></section><div className="stats"><div><Wallet/><small>Saldo Kredit Virtual</small><b>{money(data.balance)}</b></div><div><Gamepad2/><small>Koleksi Game</small><b>{data.games.length}</b></div><div><History/><small>Transaksi Demo</small><b>{data.transactions.length}</b></div><div><Zap/><small>Aktivitas Game</small><b>{data.plays}</b></div></div><div className="section-head"><div><small className="eyebrow">PILIH PETUALANGANMU</small><h2>Featured Games ✦</h2></div><Link to="/games">Lihat semua ↗</Link></div><div className="games">{data.games.slice(0,8).map(cards)}</div><div className="quick"><Link to="/deposit">＋ Deposit Demo <small>Tambahkan kredit virtual</small></Link><Link to="/withdraw">↗ Withdraw Demo <small>Simulasi penarikan kredit</small></Link><Link to="/promotions">✦ Bonus Virtual <small>Hadiah simulasi</small></Link></div></>}
