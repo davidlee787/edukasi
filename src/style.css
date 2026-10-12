@@ -287,3 +287,20 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .game-art.art-14{background:radial-gradient(circle at 50% 40%,#286342,#101a1c 70%)!important}
 .game-art.art-17{background:radial-gradient(circle at 50% 40%,#8d3326,#251421 70%)!important}
 @media(max-width:760px){.play-zone.game-theme{min-height:420px;padding:26px 14px}.play-zone.game-theme .game-mark{width:86px;height:86px}.play-zone.game-theme .slot-reels{gap:6px;padding:8px}.play-zone.game-theme .slot-reels span{min-height:76px;font-size:1rem}.play-zone.game-theme .demo-rules{font-size:.58rem;letter-spacing:.06em}.play-zone.game-9 .game-mark{width:100px;height:100px}}
+
+
+/* Compact 3D arrows for featured games only */
+.featured-actions{display:flex;align-items:center;gap:16px}
+.button-container{display:flex;justify-content:center;align-items:center;gap:8px;margin:0}
+.button-3d{-webkit-appearance:none;appearance:none;position:relative;border:0;padding:0 5px;min-width:42px;min-height:42px;box-sizing:border-box;background:transparent;font:inherit;cursor:pointer;border-radius:13px;isolation:isolate}
+.button-top{display:flex;align-items:center;justify-content:center;position:relative;z-index:2;min-height:39px;padding:7px 12px;color:#fff;background-image:linear-gradient(145deg,#6a11cb,#2575fc);text-shadow:0 -1px rgba(0,0,0,.25);border-radius:13px;transition:transform .15s ease,border-radius .15s ease}
+.button-top span{font-size:17px;font-weight:800;line-height:1}
+.button-bottom{position:absolute;z-index:1;bottom:2px;left:3px;width:calc(100% - 6px);height:calc(100% - 6px);border-radius:13px;background-image:linear-gradient(145deg,#2575fc,#6a11cb);box-shadow:0 2px 4px rgba(0,0,0,.4);transition:padding-top .15s ease}
+.button-base{position:absolute;z-index:0;top:3px;left:0;width:100%;height:calc(100% - 3px);border-radius:13px;background:rgba(0,0,0,.2);box-shadow:0 1px 1px rgba(255,255,255,.35),inset 0 2px 3px rgba(0,0,0,.2)}
+.button-3d:active .button-top{transform:translateY(3px);border-radius:9px}
+.button-3d:active .button-bottom{padding-top:0}
+.button-3d:focus-visible{outline:2px solid #6cecff;outline-offset:4px}
+.featured-games{display:flex;flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}
+.featured-games::-webkit-scrollbar{display:none}
+.featured-games>.game-card{flex:0 0 min(280px,78vw);scroll-snap-align:start}
+@media(max-width:560px){.featured-actions{gap:8px}.button-container{gap:5px}.button-3d{min-width:36px;min-height:36px}.button-top{min-height:33px;padding:6px 9px}.featured-games>.game-card{flex-basis:82vw}}
