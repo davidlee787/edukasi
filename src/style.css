@@ -240,3 +240,50 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .stats>div{padding:18px!important;background:linear-gradient(145deg,#141d2a,#0e1420)!important}
 .quick{margin-top:24px}
 @media(max-width:760px){.hero{grid-template-columns:1fr!important;min-height:0!important;padding:28px 22px 58px!important;gap:12px!important}.hero h1{font-size:clamp(3rem,12vw,4.4rem)!important;max-width:100%!important}.hero-orbit{width:min(74vw,290px);margin:0 auto 8px}.hero-foot{left:22px!important;bottom:16px!important}.hero-actions{align-items:flex-start;flex-direction:column;gap:12px}.section-head{margin-top:30px!important}.games{gap:11px!important}.game-info{min-height:0}.game-art{aspect-ratio:1.2!important}}
+
+
+/* GAME-BY-GAME ART DIRECTION — no more one-template-for-every-title */
+.play-zone.game-theme{position:relative;isolation:isolate;overflow:hidden;min-height:480px;padding:clamp(28px,5vw,58px);border:1px solid var(--theme-edge,rgba(255,255,255,.18));border-radius:18px;background:var(--theme-bg,radial-gradient(ellipse at 50% 12%,#302447,#101522 64%,#090d15));box-shadow:0 24px 80px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.12);text-align:center}
+.play-zone.game-theme:before{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background:var(--theme-overlay,radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.09),transparent 48%));opacity:1}
+.play-zone.game-theme:after{content:"";position:absolute;z-index:-1;width:70%;height:68%;left:15%;top:9%;border:1px solid var(--theme-edge,rgba(255,255,255,.15));border-radius:50%;transform:rotate(-18deg) scaleY(.43);box-shadow:0 0 0 18px rgba(255,255,255,.018),0 0 0 42px rgba(255,255,255,.014),0 0 65px var(--theme-glow,rgba(154,112,255,.15));pointer-events:none}
+.play-zone.game-theme>.tag{display:inline-flex;margin-bottom:18px;letter-spacing:.18em;padding:8px 12px;background:rgba(5,8,15,.55);border-color:var(--theme-edge,rgba(255,255,255,.2));color:var(--theme-accent,#f3d58d)}
+.play-zone.game-theme .game-mark{width:110px;height:110px;margin:8px auto 18px;position:relative;border:1px solid var(--theme-edge,rgba(255,255,255,.35));border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.24),transparent 32%),radial-gradient(circle,var(--theme-glow,rgba(154,112,255,.22)),rgba(5,8,15,.15) 68%);box-shadow:0 0 42px var(--theme-glow,rgba(154,112,255,.2)),inset 0 0 28px rgba(255,255,255,.05)}
+.play-zone.game-theme .game-mark:before{content:var(--theme-glyph,"✦");font-size:52px;line-height:1;color:var(--theme-accent,#f3d58d);text-shadow:0 0 26px var(--theme-glow,rgba(154,112,255,.6))}
+.play-zone.game-theme .game-mark span{position:absolute;inset:-11px;border:1px solid var(--theme-edge,rgba(255,255,255,.16));border-radius:50%;transform:rotate(28deg) scaleY(.4)}
+.play-zone.game-theme .game-mark span:nth-child(2){inset:-20px;transform:rotate(-42deg) scaleY(.32)}
+.play-zone.game-theme .game-mark span:nth-child(3){inset:7px;border-style:dashed;opacity:.55}
+.play-zone.game-theme h1{position:relative;margin:8px 0 10px;font-size:clamp(2.4rem,6vw,4.6rem);line-height:.98;letter-spacing:-.06em;color:var(--theme-title,#fff4d8);text-shadow:0 5px 35px var(--theme-glow,rgba(154,112,255,.2))}
+.play-zone.game-theme>p{position:relative;color:var(--theme-copy,#c5c7d0);max-width:440px;margin:0 auto 25px;line-height:1.7}
+.play-zone.game-theme .slot-reels{position:relative;max-width:620px;margin:24px auto 18px;padding:13px;gap:10px;border:1px solid var(--theme-edge,rgba(255,255,255,.22));border-radius:14px;background:linear-gradient(180deg,rgba(0,0,0,.7),rgba(15,19,30,.9));box-shadow:0 18px 38px rgba(0,0,0,.35),inset 0 1px rgba(255,255,255,.12)}
+.play-zone.game-theme .slot-reels span{min-height:100px;display:grid;place-items:center;border-radius:9px;background:linear-gradient(155deg,rgba(255,255,255,.12),rgba(255,255,255,.025));border:1px solid var(--theme-edge,rgba(255,255,255,.16));font-family:'Outfit',sans-serif;font-size:clamp(1.15rem,3vw,2rem);font-weight:800;letter-spacing:.02em;color:var(--theme-symbol,#fff1c5);text-shadow:0 0 22px var(--theme-glow,rgba(154,112,255,.5))}
+.play-zone.game-theme .demo-rules{position:relative;display:flex;justify-content:space-between;gap:12px;max-width:620px;margin:0 auto;color:var(--theme-copy,#c5c7d0);font-size:.68rem;letter-spacing:.12em}
+.play-zone.game-theme .demo-rules b{color:var(--theme-accent,#f3d58d)}
+/* Golden Temple — thunder-god / ancient marble direction */
+.play-zone.game-9{--theme-accent:#ffe19a;--theme-title:#fff1c5;--theme-symbol:#fff0bc;--theme-copy:#d7c7a2;--theme-edge:rgba(255,207,105,.42);--theme-glow:rgba(255,173,49,.28);--theme-bg:radial-gradient(ellipse at 50% 0%,#76501f 0%,#30221b 34%,#14151c 72%,#080c13 100%);--theme-overlay:repeating-linear-gradient(90deg,transparent 0 38px,rgba(255,209,115,.035) 39px 40px),radial-gradient(ellipse at 50% 5%,rgba(255,223,141,.24),transparent 48%);--theme-glyph:"♆"}
+.play-zone.game-9:before{background:linear-gradient(90deg,transparent 8%,rgba(255,202,92,.08) 8.2%,transparent 8.6%,transparent 91%,rgba(255,202,92,.08) 91.2%,transparent 91.6%),var(--theme-overlay)}
+.play-zone.game-9 .game-mark{border-radius:18px 18px 48% 48%;width:126px;height:126px;background:linear-gradient(145deg,#9c6d2c,#3b2b22 55%,#14141b);box-shadow:0 0 54px var(--theme-glow),inset 0 0 25px rgba(255,228,156,.18)}
+.play-zone.game-9 .game-mark:before{content:"♆";font-size:66px;color:#ffe3a0}
+.play-zone.game-9 .game-mark span{border-radius:0;border-top:2px solid var(--theme-accent);border-bottom:0;border-left:0;border-right:0;inset:20px -22px;transform:none}
+.play-zone.game-9 .game-mark span:nth-child(2){inset:32px -34px}
+.play-zone.game-9:after{border-radius:0;clip-path:polygon(50% 0,100% 100%,0 100%);border-color:rgba(255,210,113,.25);transform:none;top:4%;height:52%;box-shadow:none}
+.play-zone.game-2{--theme-accent:#f7d47d;--theme-edge:rgba(247,212,125,.35);--theme-glow:rgba(255,190,66,.2);--theme-bg:radial-gradient(ellipse at 50% 0%,#4a341e,#1c1920 48%,#0b1019)}
+.play-zone.game-2{--theme-glyph:"♛"}
+.play-zone.game-3{--theme-accent:#a8e6ff;--theme-edge:rgba(91,198,255,.42);--theme-glow:rgba(31,155,255,.28);--theme-bg:radial-gradient(ellipse at 50% 0%,#123e63,#101928 54%,#080d17);--theme-glyph:"ϟ"}
+.play-zone.game-4{--theme-accent:#ffbd94;--theme-edge:rgba(255,124,92,.4);--theme-glow:rgba(255,92,67,.25);--theme-bg:radial-gradient(ellipse at 50% 0%,#6a2826,#241620 48%,#0a0e18);--theme-glyph:"✹"}
+.play-zone.game-5,.play-zone.game-12,.play-zone.game-16{--theme-accent:#a9e8ff;--theme-edge:rgba(111,208,255,.42);--theme-glow:rgba(68,159,255,.25);--theme-bg:radial-gradient(ellipse at 50% 0%,#173e60,#131b2c 52%,#090e18);--theme-glyph:"◇"}
+.play-zone.game-6,.play-zone.game-10,.play-zone.game-18{--theme-accent:#f3ce8b;--theme-edge:rgba(240,197,114,.36);--theme-glow:rgba(239,160,56,.22);--theme-bg:radial-gradient(ellipse at 50% 0%,#594022,#211b20 52%,#0b1018);--theme-glyph:"✧"}
+.play-zone.game-7,.play-zone.game-15{--theme-accent:#c7b2ff;--theme-edge:rgba(166,137,255,.4);--theme-glow:rgba(137,91,255,.25);--theme-bg:radial-gradient(ellipse at 50% 0%,#39275d,#191629 54%,#090d17);--theme-glyph:"✦"}
+.play-zone.game-8,.play-zone.game-20{--theme-accent:#ff93d3;--theme-edge:rgba(255,102,201,.42);--theme-glow:rgba(255,57,180,.22);--theme-bg:radial-gradient(ellipse at 50% 0%,#552044,#1d172a 52%,#080d17);--theme-glyph:"✿"}
+.play-zone.game-11{--theme-accent:#e9c18b;--theme-edge:rgba(223,172,107,.42);--theme-glow:rgba(191,107,49,.25);--theme-bg:radial-gradient(ellipse at 50% 0%,#59351e,#201923 54%,#080d16);--theme-glyph:"⚓"}
+.play-zone.game-13{--theme-accent:#ffe29c;--theme-edge:rgba(255,221,133,.42);--theme-glow:rgba(255,190,60,.23);--theme-bg:radial-gradient(ellipse at 50% 0%,#66502a,#211c22 54%,#090e17);--theme-glyph:"♛"}
+.play-zone.game-14{--theme-accent:#b5e9a0;--theme-edge:rgba(136,219,116,.4);--theme-glow:rgba(82,189,91,.22);--theme-bg:radial-gradient(ellipse at 50% 0%,#214d37,#16251f 54%,#080f16);--theme-glyph:"❧"}
+.play-zone.game-17{--theme-accent:#ffb09d;--theme-edge:rgba(255,111,88,.42);--theme-glow:rgba(255,70,53,.25);--theme-bg:radial-gradient(ellipse at 50% 0%,#70251f,#281724 54%,#080d17);--theme-glyph:"♨"}
+.play-zone.game-19{--theme-accent:#c8b5ff;--theme-edge:rgba(170,139,255,.42);--theme-glow:rgba(144,92,255,.23);--theme-bg:radial-gradient(ellipse at 50% 0%,#44275e,#1b192b 54%,#080d17);--theme-glyph:"☼"}
+.play-zone.game-21{--theme-accent:#f4c6f4;--theme-edge:rgba(222,150,255,.4);--theme-glow:rgba(193,94,255,.23);--theme-bg:radial-gradient(ellipse at 50% 0%,#4c2c65,#1b192a 54%,#080d17);--theme-glyph:"✺"}
+.game-art.art-9{background:radial-gradient(circle at 50% 40%,#a7782f,#4a301c 48%,#11131b)!important}
+.game-art.art-9:after{content:"♆";position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(3.5rem,8vw,6rem);color:#ffe4a0;text-shadow:0 0 30px #f4b64288;pointer-events:none}
+.game-art.art-8{background:radial-gradient(circle at 50% 40%,#722c5d,#22162d 70%)!important}
+.game-art.art-11{background:radial-gradient(circle at 50% 40%,#79512b,#211a20 70%)!important}
+.game-art.art-14{background:radial-gradient(circle at 50% 40%,#286342,#101a1c 70%)!important}
+.game-art.art-17{background:radial-gradient(circle at 50% 40%,#8d3326,#251421 70%)!important}
+@media(max-width:760px){.play-zone.game-theme{min-height:420px;padding:26px 14px}.play-zone.game-theme .game-mark{width:86px;height:86px}.play-zone.game-theme .slot-reels{gap:6px;padding:8px}.play-zone.game-theme .slot-reels span{min-height:76px;font-size:1rem}.play-zone.game-theme .demo-rules{font-size:.58rem;letter-spacing:.06em}.play-zone.game-9 .game-mark{width:100px;height:100px}}
